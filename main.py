@@ -1,11 +1,26 @@
-xx = 12
-yy = 12
-board = [[xx for x in range(xx)] for y in range(xx)]
-a = [1,2,3]
+import Board
+import Characters
+import Camera
+import os
+import time
 
-for row in board:
-  print(row)
+class gameInit():
 
-      
+  def __init__(self, board, camera):
+    pass
 
-print(board)
+def clrscr():
+  os.system('cls' if os.name == 'nt' else 'clear')
+
+def run():
+
+  charac = [Characters.Character(2,2,'@', True)]
+  camera = Camera.Camera(0,0,0,0)
+  board = Board.Board(50,10,camera, charac)
+
+  while(1):
+    board.printBoard()
+    time.sleep(0.3333)
+    clrscr()
+
+run()
