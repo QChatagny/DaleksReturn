@@ -1,19 +1,39 @@
 
 class Character:
   
-  def __init__(self, posX, posY):
+  #nbCharacters = 0
+
+  def __init__(self, posX, posY, char ,isAlive):
+    #nbCharacters += nbCharacters
     self.posX = posX
     self.posY = posY
+    self.isAlive = isAlive
+    self.char = char
+
+  def moveUp(self):
+    self.posY -= 1
+
+  def moveDown(self):
+    self.posY += 1
+
+  def moveLeft(self):
+    self.posX -= 1
+
+  def moveRight(self):
+    self.posX += 1
+      
+class Dalek(Character):
+  nbDaleks = 0
+
+  def __init__(self, posX, posY, isAlive):
+    nbDaleks += nbDaleks
+    super().__init__(posX, posY, isAlive)
 
 
-c = Character(1,2)
+class Doctor(Character):
 
-if (c.posX == 1):
-  print("you got it")
-
-else: 
-  print('not a goot one')
-
-
+  def __init__(self, posX, posY, isAlive):
+    super().__init__(posX, posY, isAlive)
+      
 
 
