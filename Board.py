@@ -1,10 +1,9 @@
 
 class Board:
 
-  def __init__(self, width, height, camera, characters):
+  def __init__(self, width, height, characters):
     self.width = width
     self.height = height
-    self.camera = camera
     self.characters = characters
     self.boardArray = [['#' for x in range(self.width)] for y in range(self.height)] 
 
