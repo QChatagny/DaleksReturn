@@ -15,8 +15,8 @@ class Board:
   def print(self):
     for lines in self.map:
       for tile in lines:
-        print(tile, end=" ")
-      print('\n', end=" ")
+        print(tile, end="  ")
+      print('\n', end="  ")
 
   
   
