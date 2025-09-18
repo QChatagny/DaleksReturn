@@ -5,18 +5,18 @@ class Board:
     self.width = width
     self.height = height
     self.characters = characters
-    self.boardArray = [['#' for x in range(self.width)] for y in range(self.height)] 
+    self.map = [['#' for x in range(self.width)] for y in range(self.height)] 
 
-  def actualizeCharactersBoardArray(self):
+  def actualizeMap(self):
     for character in self.characters:
       if character.isAlive:
-        self.boardArray[character.posX][character.posY] = character.char
+        self.map[character.posX][character.posY] = character.char
 
-  def printBoard(self):
-    for lines in self.boardArray:
+  def print(self):
+    for lines in self.map:
       for tile in lines:
-        print(tile, end=" ")
-      print('\n', end=" ")
+        print(tile, end="  ")
+      print('\n', end="  ")
 
   
   
