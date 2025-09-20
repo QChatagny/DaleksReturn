@@ -1,10 +1,10 @@
 
 class Character:
   
-  #nbCharacters = 0
+  nbCharacters = 0
 
   def __init__(self, posX, posY, char ,isAlive):
-    #nbCharacters += nbCharacters
+    nbCharacters += nbCharacters
     self.posX = posX
     self.posY = posY
     self.isAlive = isAlive

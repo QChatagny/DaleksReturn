@@ -22,7 +22,7 @@ def clrscr():
 
 
 camera = Camera.Camera(0,0,0,0)
-charac = [Characters.Character(2,2,'@', True), Characters.Character(2,2,'@', True)]
+charac = [Characters.Dalek(2,2,'@', True), Characters.Doctor(2,2,'@', True)]
 board  = Board.Board(50,10, charac)
 game   = Game(board, camera)
 
