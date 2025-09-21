@@ -8,6 +8,7 @@ import msvcrt
 class Input:
 
   def __init__(self):
+    pass
     
   @staticmethod
   def clrBuffer(self):
