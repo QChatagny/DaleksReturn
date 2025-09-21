@@ -17,42 +17,68 @@ class InputManager:
   def associate(self, char, function):
     self.actions[char] = function
 
+  def setActions(self, actions):
+    self.actions = actions
+
 # Class Input asks for input using the getch() for msvcrt package
 # parses the input using the input manager associated values
+
 class Input:
 
-  def __init__(self, inputManager):
+  def __init__(self, inputManager = InputManager()):
     self.keys = inputManager.actions.keys()
     pass
     
-  def getC():
-    char = msvcrt.getch().decode("utf-8")
-    return char
-
   def clrBuffer():
     while (msvcrt.kbhit()):
       msvcrt.getch()
 
-  def getInputTest(self):
+  def getC(self):
+    self.clrBuffer()
+    char = msvcrt.getch().decode("utf-8")
+    return char
 
-    char = self.getC() 
+  def getCTest(self):
+    char = '\0'
 
-    if (char == b'\xe0'): # si le char est un escape char
+    while (char != 'q'):
+      char = self.getC() 
 
-      if (char == b'K'):
-        print("left arrow")
+      if (char == b'\xe0'): # si le char est un escape char
 
-      elif (char == b'H'):
-        print("up arrow")
+        if (char == 'K'):
+          print("left arrow")
 
-      elif (char == b'M'):
-        print("right arrow")
+        elif (char == 'H'):
+          print("up arrow")
 
-      elif (char == b'P'):
-        print("down arrow")
+        elif (char == 'M'):
+          print("right arrow")
 
-    else:
-      print(char)
+        elif (char == 'P'):
+          print("down arrow")
+
+      else:
+        print(char)
+
+  def validateChar(self, char):
+    return char in self.keys
 
 
-  
+  def validateCharTest(self):
+
+    keys = {
+      97 : print("action1"),
+      98 : print("action1"),
+      99 : print("action1"),
+      100 : print("action1")
+    }
+    
+    for a in range(95, 103):
+      if self.validateChar(a):
+        print(a, "is in keys")
+      else:
+        print(a, "is not in keys")
+
+
+

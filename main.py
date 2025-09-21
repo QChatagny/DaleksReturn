@@ -3,7 +3,6 @@ import Characters
 import Camera
 import os
 import time
-import msvcrt
 
 class Game():
 
