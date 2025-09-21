@@ -21,6 +21,7 @@ class Game():
 
   def run(self):
     # self.runMapTest()
+    
     pass
 
 # code copié de stackoverflow, nt c'est windows else unix based 'clear'
@@ -33,7 +34,7 @@ charac = [Characters.Dalek(2,2,'@',True), Characters.Doctor(3,3,'I', True)]
 board  = Board.Board(50,10,charac)
 
 inputMan = i.InputManager()
-inputMan.associate('K', Characters.Character.moveLeft)
+inputMan.associate('K', board.moveDocLeft)
 
 
 game   = Game(board, camera, inputMan)
