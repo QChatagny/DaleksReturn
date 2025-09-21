@@ -20,6 +20,9 @@ class InputManager:
   def setActions(self, actions):
     self.actions = actions
 
+  def getAction(self, key):
+    return self.actions[key]
+
 # Class Input asks for input using the getch() for msvcrt package
 # parses the input using the input manager associated values
 
@@ -45,19 +48,14 @@ class Input:
       char = self.getC() 
 
       if (char == b'\xe0'): # si le char est un escape char
-
         if (char == 'K'):
           print("left arrow")
-
         elif (char == 'H'):
           print("up arrow")
-
         elif (char == 'M'):
           print("right arrow")
-
         elif (char == 'P'):
           print("down arrow")
-
       else:
         print(char)
 

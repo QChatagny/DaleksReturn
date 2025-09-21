@@ -3,6 +3,7 @@ import Characters
 import Camera
 import os
 import time
+import input as i
 
 class Game():
 
