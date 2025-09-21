@@ -3,6 +3,7 @@ import Characters
 import Camera
 import os
 import time
+import msvcrt
 
 class Game():
 
@@ -17,6 +18,7 @@ class Game():
       time.sleep(0.3333)
       clrscr()
 
+# code copié de stackoverflow, nt c'est windows else unix based 'clear'
 def clrscr():
   os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -27,6 +29,7 @@ board  = Board.Board(50,10, charac)
 game   = Game(board, camera)
 
 game.run()
+
 
 
 
