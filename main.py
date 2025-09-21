@@ -7,9 +7,10 @@ import input as i
 
 class Game():
 
-  def __init__(self, board, camera):
+  def __init__(self, board, camera, inputManager):
     self.board = board
     self.camera = camera 
+    self.inputManager = inputManager
 
   def run(self):
     while(1):
@@ -24,8 +25,8 @@ def clrscr():
 
 
 camera = Camera.Camera(0,0,0,0)
-charac = [Characters.Dalek(2,2,'@', True), Characters.Doctor(3,3,'I', True)]
-board  = Board.Board(50,10, charac)
+charac = [Characters.Dalek(2,2,'@',True), Characters.Doctor(3,3,'I', True)]
+board  = Board.Board(50,10,charac)
 game   = Game(board, camera)
 
 game.run()

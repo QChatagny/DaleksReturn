@@ -73,10 +73,10 @@ class Input:
   def validateCharTest(self):
 
     keys = {
-      97  : print("action1"),
-      98  : print("action1"),
-      99  : print("action1"),
-      100 : print("action1")
+      97  : print,
+      98  : print,
+      99  : print,
+      100 : print
     }
     
     for a in range(95, 103):
