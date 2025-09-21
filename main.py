@@ -12,12 +12,16 @@ class Game():
     self.camera = camera 
     self.inputManager = inputManager
 
-  def run(self):
+  def runMapTest(self):
     while(1):
       self.board.actualizeMap()
       self.board.print()
       time.sleep(0.3333)
       clrscr()
+
+  def run(self):
+    # self.runMapTest()
+    pass
 
 # code copié de stackoverflow, nt c'est windows else unix based 'clear'
 def clrscr():
@@ -27,7 +31,12 @@ def clrscr():
 camera = Camera.Camera(0,0,0,0)
 charac = [Characters.Dalek(2,2,'@',True), Characters.Doctor(3,3,'I', True)]
 board  = Board.Board(50,10,charac)
-game   = Game(board, camera)
+
+inputMan = i.InputManager()
+inputMan.associate('K', Characters.Character.moveLeft)
+
+
+game   = Game(board, camera, inputMan)
 
 game.run()
 

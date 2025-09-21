@@ -1,4 +1,6 @@
 
+import Characters
+
 class Board:
 
   def __init__(self, width, height, characters):
@@ -17,6 +19,11 @@ class Board:
       for tile in lines:
         print(tile, end="  ")
       print('\n', end="  ")
+
+  def moveDocLeft(self):
+    for character in self.characters:
+      if isinstance(character, Characters.Doctor):
+        character.moveLeft()
 
   
   

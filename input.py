@@ -1,27 +1,6 @@
 
 import msvcrt
-
-# Class InputManager
-# Retrieves input and assigns them to function
-# associated with the input.
-# works with a dictionary called actions
-# a function associates pairs of key -> function 
-# at the index of the char corresponding to the key pressed
-# with bit[0] returns the int corresponding to the char
-
-class InputManager:
-
-  def __init__(self):
-    self.actions = {}
-
-  def associate(self, char, function):
-    self.actions[char] = function
-
-  def setActions(self, actions):
-    self.actions = actions
-
-  def getAction(self, key):
-    return self.actions[key]
+  
 
 # Class Input asks for input using the getch() for msvcrt package
 # parses the input using the input manager associated values
@@ -38,12 +17,8 @@ class Input:
 
   def getC(self):
     self.clrBuffer()
-    char = msvcrt.getch()
+    return msvcrt.getch()
 
-    if char != b'\xe0':
-      char = char.decode("utf-8")
-
-    return char
 
   def getCTest(self):
 
@@ -54,7 +29,7 @@ class Input:
       char = self.getC() 
 
       if (char == b'\xe0'): # si le char est un escape char
-        char = msvcrt.getch().decode('utf-8')
+        char = msvcrt.getch().decode('utf-8') # decode to string
         if (char == 'K'):
           print("left arrow")
         elif (char == 'H'):
@@ -64,11 +39,45 @@ class Input:
         elif (char == 'P'):
           print("down arrow")
       else:
+        char = char.decode("utf-8")
         print(char)
 
-  def validateChar(self, char):
-    return char in self.keys
 
+
+
+# input = Input()
+# input.getCTest()
+
+# Class InputManager
+# Retrieves input and assigns them to function
+# associated with the input.
+# works with a dictionary called actions
+# A function associates pairs of key -> function 
+# at the index of the char corresponding to the key pressed
+# with bit[0] returns the int corresponding to the char
+
+class InputManager:
+
+  def __init__(self):
+    self.actions = {}
+
+  def associate(self, char, function):
+    self.actions[char] = function
+
+  def setActions(self, actions):
+    self.actions = actions
+
+# calls a function from the dictionary
+  def getAction(self, key, param):
+    return self.actions[key](param)
+
+  def listen():
+    
+    while (1):
+      pass
+
+  def validateChar(self, char):
+    return char in self.actions.keys()
 
   def validateCharTest(self):
 
@@ -84,8 +93,3 @@ class Input:
         print(a, "is in keys")
       else:
         print(a, "is not in keys")
-
-# input = Input()
-# input.getCTest()
-
-
