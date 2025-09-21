@@ -29,7 +29,6 @@ class Dalek(Character):
     Dalek.nbDaleks += 1
     super().__init__(posX, posY, char, isAlive)
 
-
 class Doctor(Character):
 
   def __init__(self, posX, posY, char, isAlive):

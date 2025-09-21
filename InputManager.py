@@ -17,10 +17,13 @@ class InputManager:
   def setActions(self, actions):
     self.actions = actions
 
-# calls a function from the dictionary
-  def getAction(self, key, param=None):
-    return self.actions[key](param)
+  @staticmethod
+  def sayHi():
+    print("hi")
 
+# calls a function from the dictionary
+  def getAction(self, key):
+    return self.actions[key]()
 
   def validateChar(self, char):
     return char in self.actions.keys() #returns true if char is a key from the actions dictionary
@@ -43,3 +46,6 @@ class InputManager:
   def listen(self,char):
     if self.validateChar(char):
       self.getAction(char)
+      return True
+    else:
+      return False

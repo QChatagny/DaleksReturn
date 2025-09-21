@@ -11,13 +11,13 @@ class Input:
     pass
     
   @staticmethod
-  def clrBuffer(self):
+  def clrBuffer():
     while (msvcrt.kbhit()):
       msvcrt.getch()
 
   @staticmethod
-  def getC(self):
-    self.clrBuffer()
+  def getC():
+    Input.clrBuffer()
     char = msvcrt.getch()
 
     if (char == b'\xe0'): # si le char est un escape char

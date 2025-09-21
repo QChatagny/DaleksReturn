@@ -1,9 +1,9 @@
 import Board
 import Characters
 import Camera
-import os
 import time
 import input as i
+import InputManager as im
 
 class Game():
 
@@ -14,27 +14,31 @@ class Game():
 
   def runMapTest(self):
     while(1):
-      self.board.actualizeMap()
-      self.board.print()
+      self.render() 
       time.sleep(0.3333)
-      clrscr()
+
+  def runInManTest(self): # test for input manager
+    char = '\0'
+    self.board.render()
+    while char != 'q':
+      char = i.Input.getC()
+      if self.inputManager.listen(char):
+        self.board.render()
 
   def run(self):
     # self.runMapTest()
-    
+    self.runInManTest()
     pass
 
-# code copié de stackoverflow, nt c'est windows else unix based 'clear'
-def clrscr():
-  os.system('cls' if os.name == 'nt' else 'clear')
 
 
 camera = Camera.Camera(0,0,0,0)
-charac = [Characters.Dalek(2,2,'@',True), Characters.Doctor(3,3,'I', True)]
+charac = [Characters.Dalek(2,2,'@',True), Characters.Doctor(10,3,'I', True)]
 board  = Board.Board(50,10,charac)
 
-inputMan = i.InputManager()
-inputMan.associate('K', board.moveDocLeft)
+inputMan = im.InputManager()
+inputMan.associate('K', board.moveDoc)
+# inputMan.associate('K', im.InputManager.sayHi)
 
 
 game   = Game(board, camera, inputMan)

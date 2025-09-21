@@ -1,5 +1,9 @@
 
 import Characters
+import os
+
+def clrscr():
+  os.system('cls' if os.name == 'nt' else 'clear')
 
 class Board:
 
@@ -20,10 +24,18 @@ class Board:
         print(tile, end="  ")
       print('\n', end="  ")
 
-  def moveDocLeft(self):
+  def moveDoc(self):
+    print("doctor moved")
     for character in self.characters:
       if isinstance(character, Characters.Doctor):
-        character.moveLeft()
+          character.moveLeft()
+
+
+  # code copié de stackoverflow, nt c'est windows else unix based 'clear'
+  def render(self):
+    self.actualizeMap()
+    clrscr()
+    self.print()
 
   
   
