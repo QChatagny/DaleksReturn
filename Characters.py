@@ -4,7 +4,7 @@ class Character:
   nbCharacters = 0
 
   def __init__(self, posX, posY, char ,isAlive):
-    nbCharacters += nbCharacters
+    Character.nbCharacters += 1
     self.posX = posX
     self.posY = posY
     self.isAlive = isAlive
@@ -25,15 +25,15 @@ class Character:
 class Dalek(Character):
   nbDaleks = 0
 
-  def __init__(self, posX, posY, isAlive):
-    nbDaleks += nbDaleks
-    super().__init__(posX, posY, isAlive)
+  def __init__(self, posX, posY, char, isAlive):
+    Dalek.nbDaleks += 1
+    super().__init__(posX, posY, char, isAlive)
 
 
 class Doctor(Character):
 
-  def __init__(self, posX, posY, isAlive):
-    super().__init__(posX, posY, isAlive)
+  def __init__(self, posX, posY, char, isAlive):
+    super().__init__(posX, posY, char, isAlive)
       
 
 

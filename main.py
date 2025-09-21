@@ -13,7 +13,7 @@ class Game():
 
   def run(self):
     while(1):
-      self.actualizeMap()
+      self.board.actualizeMap()
       self.board.print()
       time.sleep(0.3333)
       clrscr()
@@ -24,7 +24,7 @@ def clrscr():
 
 
 camera = Camera.Camera(0,0,0,0)
-charac = [Characters.Dalek(2,2,'@', True), Characters.Doctor(2,2,'@', True)]
+charac = [Characters.Dalek(2,2,'@', True), Characters.Doctor(3,3,'I', True)]
 board  = Board.Board(50,10, charac)
 game   = Game(board, camera)
 

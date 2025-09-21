@@ -32,22 +32,29 @@ class Input:
     self.keys = inputManager.actions.keys()
     pass
     
-  def clrBuffer():
+  def clrBuffer(self):
     while (msvcrt.kbhit()):
       msvcrt.getch()
 
   def getC(self):
     self.clrBuffer()
-    char = msvcrt.getch().decode("utf-8")
+    char = msvcrt.getch()
+
+    if char != b'\xe0':
+      char = char.decode("utf-8")
+
     return char
 
   def getCTest(self):
+
+    self.clrBuffer()
     char = '\0'
 
     while (char != 'q'):
       char = self.getC() 
 
       if (char == b'\xe0'): # si le char est un escape char
+        char = msvcrt.getch().decode('utf-8')
         if (char == 'K'):
           print("left arrow")
         elif (char == 'H'):
@@ -66,9 +73,9 @@ class Input:
   def validateCharTest(self):
 
     keys = {
-      97 : print("action1"),
-      98 : print("action1"),
-      99 : print("action1"),
+      97  : print("action1"),
+      98  : print("action1"),
+      99  : print("action1"),
       100 : print("action1")
     }
     
@@ -78,5 +85,7 @@ class Input:
       else:
         print(a, "is not in keys")
 
+# input = Input()
+# input.getCTest()
 
 
