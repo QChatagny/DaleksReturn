@@ -16,7 +16,7 @@ class Board:
   def actualizeMap(self):
     for character in self.characters:
       if character.isAlive:
-        self.map[character.posX][character.posY] = character.char
+        self.map[character.posY][character.posX] = character.char
 
   def print(self):
     for lines in self.map:
