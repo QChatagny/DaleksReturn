@@ -21,6 +21,30 @@ class Character:
 
   def moveRight(self):
     self.posX += 1
+  
+  def directionToDoc(self, doc):
+    isUp = False
+    isDown = False
+    isLeft = False
+    isRight = False
+
+    if self.posX > doc.posX:
+      isRight = True
+    else:
+      isLeft = True
+
+    if self.posY > doc.posY:
+      isDown = True
+    else:
+      isUp = True
+
+    return isUp, isRight, isDown, isLeft
+  
+  def directionToDocTest():
+    doc = Doctor(10,10, '@', True)
+    doc = Dalek(0,0, '*', True)
+    print()
+
       
 class Dalek(Character):
   nbDaleks = 0

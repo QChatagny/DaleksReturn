@@ -37,8 +37,10 @@ charac = [Characters.Dalek(2,2,'@',True), Characters.Doctor(10,3,'I', True)]
 board  = Board.Board(50,20,charac)
 
 inputMan = im.InputManager()
-inputMan.associate('K', board.moveDoc)
-# inputMan.associate('K', im.InputManager.sayHi)
+inputMan.associate('K', board.moveDocLeft)
+inputMan.associate('M', board.moveDocRight)
+inputMan.associate('H', board.moveDocUp)
+inputMan.associate('P', board.moveDocDown)
 
 
 game   = Game(board, camera, inputMan)

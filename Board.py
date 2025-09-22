@@ -25,11 +25,28 @@ class Board:
         print(tile, end="  ")
       print('\n', end="  ")
 
-  def moveDoc(self):
-    print("doctor moved")
+  def moveDocLeft(self):
     for character in self.characters:
       if isinstance(character, Characters.Doctor):
           character.moveLeft()
+
+  def moveDocRight(self):
+    for character in self.characters:
+      if isinstance(character, Characters.Doctor):
+          character.moveRight()
+
+  def moveDocUp(self):
+    for character in self.characters:
+      if isinstance(character, Characters.Doctor):
+          character.moveUp()
+
+  def moveDocDown(self):
+    for character in self.characters:
+      if isinstance(character, Characters.Doctor):
+          character.moveDown()
+
+  def moveDaleks(self):
+    for character 
 
 
   # code copié de stackoverflow, nt c'est windows else unix based 'clear'
