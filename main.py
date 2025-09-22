@@ -34,7 +34,7 @@ class Game():
 
 camera = Camera.Camera(0,0,0,0)
 charac = [Characters.Dalek(2,2,'@',True), Characters.Doctor(10,3,'I', True)]
-board  = Board.Board(50,10,charac)
+board  = Board.Board(50,20,charac)
 
 inputMan = im.InputManager()
 inputMan.associate('K', board.moveDoc)
