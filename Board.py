@@ -14,6 +14,7 @@ class Board:
     self.map = [['#' for x in range(self.width)] for y in range(self.height)] 
 
   def actualizeMap(self):
+    self.map = [['#' for x in range(self.width)] for y in range(self.height)] 
     for character in self.characters:
       if character.isAlive:
         self.map[character.posY][character.posX] = character.char
