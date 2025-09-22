@@ -17,10 +17,6 @@ class InputManager:
   def setActions(self, actions):
     self.actions = actions
 
-  @staticmethod
-  def sayHi():
-    print("hi")
-
 # calls a function from the dictionary
   def getAction(self, key):
     return self.actions[key]()
