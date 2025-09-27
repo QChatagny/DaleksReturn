@@ -34,6 +34,10 @@ class Board:
     for character in self.characters:
       if isinstance(character, Characters.Doctor):
           character.moveRight()
+          break
+    for character in self.characters:
+      if isinstance(character, Characters.Dalek):
+        character.moveDaleksToDoc()
 
   def moveDocUp(self):
     for character in self.characters:
@@ -44,9 +48,6 @@ class Board:
     for character in self.characters:
       if isinstance(character, Characters.Doctor):
           character.moveDown()
-
-  def moveDaleks(self):
-    for character 
 
 
   # code copié de stackoverflow, nt c'est windows else unix based 'clear'

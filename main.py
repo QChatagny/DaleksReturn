@@ -33,7 +33,13 @@ class Game():
 
 
 camera = Camera.Camera(0,0,0,0)
-charac = [Characters.Dalek(2,2,'@',True), Characters.Doctor(10,3,'I', True)]
+charac = [Characters.Dalek(0,1,'@',True),
+          Characters.Dalek(0,2,'@',True),
+          Characters.Dalek(0,3,'@',True),
+          Characters.Dalek(0,4,'@',True),
+          Characters.Dalek(0,5,'@',True),
+          Characters.Dalek(0,6,'@',True),
+          Characters.Doctor(10,3,'I', True)]
 board  = Board.Board(50,20,charac)
 
 inputMan = im.InputManager()
