@@ -13,14 +13,11 @@ class Board:
     CASE_VIDE = 0
     DALEK = 1
 
-  def pin():
-    print("alo")
-
   def __init__(self, width, height, characters):
     self.width = width
     self.height = height
     self.characters = characters
-    self.map = [['#' for x in range(self.width)] for y in range(self.height)] 
+    self.map = [[0 for x in range(self.width)] for y in range(self.height)] 
 
   def actualizeMap(self):
     self.map = [['#' for x in range(self.width)] for y in range(self.height)] 
@@ -78,9 +75,6 @@ class Board:
     self.actualizeMap()
     clrscr()
     self.print()
-
-  
-Board.pin();
 
 
 
